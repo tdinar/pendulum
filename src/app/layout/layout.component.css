@@ -1,0 +1,12 @@
+.one{
+  background-color: rgba(138, 207, 240, 0.4);
+  border-color: rgba(138, 207, 255, 1.0);
+  border : solid medium rgba(138, 207, 255, 1.0);
+  padding: 0;
+
+}
+button:disabled,button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}

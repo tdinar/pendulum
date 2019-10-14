@@ -1,0 +1,115 @@
+
+<div class="col-lg-12 col-md-12" style="height:44pc;text-align:center;color:blue;border:thin  cadetblue;padding:2pc;" #viewcontainer>
+<div class="col-lg-10-offset-2 col-md-10-offset-2"  style="height:40pc;text-align:center;color:cadetblue;border:thin  green;">
+
+<div class="col-lg-6 col-md-6-offset-1"  style="margin-left:12.5pc;height:40pc;text-align:center;color:blue;border:solid 5px cadetblue;">
+  <!-- {{objectState.questions[5].value}} -->
+
+<!-- <svg style=" padding:0px;margin:0px;margin-left:0px;" width="100%"
+height="100%"  preserveAspectRatio="xMaxYMax" viewbox="0 0 100 100"> -->
+
+
+
+<!-- <svg    viewBox="0 0 1000 1000"   style="fill:red;stroke: cadetblue;"  >
+<rect preserveAspectRatio="xMaxYMax" x="0" y="0" width="1000" height="1000" style="fill:cadetblue;" stroke="green"  ></rect>
+
+</svg> -->
+
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" >
+
+
+  <svg preserveAspectRatio="xMaxYMax" iewBox="0 0 1000 1000" width="40%" height="20%" xmlns="http://www.w3.org/2000/svg">
+    <!-- Simple rectangle -->
+    <!-- <rect width="100" height="100" /> -->
+
+    <!-- Rounded corner rectangle -->
+    <rect x="0" width="1000" height="1000"  style="fill:cadetblue;" />
+    <circle transform=" translate(0 0)" *ngFor="let point of plotPoints;index as i;"  preserveAspectRatio="xMinYMin"  style="fill:red;"   r="2%" [attr.cx.pc]="i.toString()+'%'" [attr.cy.pc]="point.toString()+'%'"/>
+
+  </svg>
+
+
+<g transform="translate(300 240)">
+<svg  preserveAspectRatio="xMaxYMax" iewBox="0 0 1000 1000" width="100%" height="60%" xmlns="http://www.w3.org/2000/svg">
+  <g transform="scale(0.4 0.8)" >
+
+  <rect x="0" width="1000" height="1200"  style="fill:cadetblue;" />
+  <line x1="50%" y1="0.5%" [attr.x2.pc]="objectState.questions[0].value.toString()+'%'" [attr.y2.pc]="objectState.questions[1].value.toString()+'%'" stroke="black" />
+  <line *ngFor="let row of blurLines"  x1="50%" y1="0.5%" [attr.x2.pc]="row[0].toString()+'%'" [attr.y2.pc]="row[1].toString()+'%'" stroke="blue" />
+  <circle *ngFor="let row of blurLines" style="fill:red;"   r="15" [attr.cx.pc]="row[0].toString()+'%'" [attr.cy.pc]="row[1].toString()+'%'"/>
+  <circle style="fill:red;"   r="0.5%" cx="50%" cy=".5%"/>
+  <circle style="fill:red;"   r="15" [attr.cx.pc]="objectState.questions[0].value.toString()+'%'" [attr.cy.pc]="objectState.questions[1].value.toString()+'%'"/>
+  <circle style="fill:white;"   r="5" [attr.cx.pc]="objectState.questions[0].value.toString()+'%'" [attr.cy.pc]="objectState.questions[1].value.toString()+'%'"/>
+  </g>
+</svg>
+</g>
+</svg>
+
+</div>
+<div class="col-lg-3 col-md-6-offset-1"  style="height:40pc;text-align:center;color:blue;border:solid 5px cadetblue;">
+<h3>Pendulum</h3>
+
+<table style="margin-top:100px;">
+
+
+
+
+
+
+
+
+<tr style="margin:10px;" >
+  <td>
+  <span >{{objectState.questions[2].defaultWord}}</span>
+</td>
+<td>
+  <div input-question [question]="objectState.questions[2]" [(form)]="form" (updateValue)="updateValueName($event)">
+
+</div>
+</td>
+</tr>
+
+
+<tr style="margin:10px;">
+  <td>
+  <span >{{objectState.questions[3].defaultWord}}</span>
+</td>
+<td>
+  <div input-question [question]="objectState.questions[3]" [form]="form" (updateValue)="updateValueName($event)">
+
+</div>
+</td>
+</tr>
+
+
+</table>
+<button *ngIf="objectState.questions[4].value" style="height:40px;width:80px;margin-top:40px;"(click)='stopFall()'>stop</button>
+<button *ngIf="!objectState.questions[4].value" style="height:40px;width:80px;margin-top:40px;"(click)='animateFall()'[disabled]="!form.valid">animate</button>
+</div>
+</div>
+
+
+
+</div>
+
+
+
+
+  <!-- <tr style="margin:10px;" >
+    <td>
+    <span >{{objectState.questions[0].defaultWord}}</span>
+  </td>
+  <td>
+    <span >{{objectState.questions[4].value}}</span>
+  </td>
+  </tr> -->
+
+
+  <!-- <tr style="margin:10px;" >
+    <td>
+    <span >{{objectState.questions[1].defaultWord}}</span>
+  </td>
+  <td>
+    <span >{{objectState.questions[1].value}}</span>
+  </td>
+  </tr> -->

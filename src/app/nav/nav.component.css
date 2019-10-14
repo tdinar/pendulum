@@ -1,0 +1,11 @@
+.navButton{
+  margin-right: 20px;
+  border: solid medium rgba(138, 207, 255, 1.0);
+  border-radius: 4px;
+}
+.banner{
+  width:inherit;
+  height: inherit;
+  border: solid rgba(138, 207, 255, 1.0);
+  border-width: 10px;
+}

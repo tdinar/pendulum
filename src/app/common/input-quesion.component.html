@@ -1,0 +1,24 @@
+
+<div *ngIf=" Questiontype == 'string'" style="padding:0px;" >
+<div  [formGroup]="form" *ngIf="question" style="display:inline-block;padding:0px;">
+  <input #inputbox style="border-radius:10pc; border:thin solid grey;margin-left:2pc;width:4pc;"
+
+  class="ng-untouched ng-pristine ng-valid inputQuestion"
+  input-focus="onFocus($event)"
+  input-blur="onBlur($event)"
+
+   maxlength="30" minlength="1"
+  required  type="question"
+
+  [formControlName]="question.key"
+  [(ngModel)]="question.value">
+</div>
+<div *ngIf="form.controls[question.key].errors">
+  <div *ngIf="form.controls[question.key].errors.min">
+                       Minimum value is {{question.min}}.
+  </div>
+  <div *ngIf="form.controls[question.key].errors.max">
+                       Maximum value is {{question.max}}.
+  </div>
+</div>
+</div>
